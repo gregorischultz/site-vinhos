@@ -11,6 +11,7 @@ import { Etoiles } from "@/components/Etoiles";
 import { Badge } from "@/components/Badge";
 import { Tableau } from "@/components/Tableau";
 import { BlocSanitaire } from "@/components/BlocSanitaire";
+import { DivulgationAffiliation } from "@/components/DivulgationAffiliation";
 import { BoutonOffre } from "@/components/BoutonOffre";
 import { offresVisibles } from "@/lib/offres";
 import paysData from "@/data/pays.json";
@@ -143,6 +144,9 @@ export default async function FicheVin({
       <section className="mt-12 rounded-carafe border border-trait bg-sable p-6">
         <h2 className="text-xl">Où acheter</h2>
         <div className="mt-3">
+          <DivulgationAffiliation />
+        </div>
+        <div className="mt-3">
           <BlocSanitaire />
         </div>
         {offres.length === 0 ? (
@@ -170,10 +174,6 @@ export default async function FicheVin({
             ))}
           </ul>
         )}
-        <p className="mt-4 font-donnees text-xs text-encre-doux">
-          Certains liens sont affiliés : un achat peut nous rémunérer, sans
-          surcoût pour vous. Cela n&apos;influence pas notre classement.
-        </p>
       </section>
     </main>
   );

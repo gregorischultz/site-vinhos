@@ -9,7 +9,8 @@ type Gtag = (
 /**
  * BoutonOffre — lien d'achat affilié. Envoie l'évènement GA4 `clic_affilie`
  * (si GA4 est présent) puis laisse la navigation vers /go/[id] se faire.
- * rel="sponsored nofollow" : exigé pour les liens affiliés.
+ * rel="sponsored nofollow noopener" et mention « Lien affilié » : exigés pour
+ * les liens affiliés (art. L121-3 Code de la consommation).
  */
 export function BoutonOffre({
   id,
@@ -31,11 +32,14 @@ export function BoutonOffre({
     <a
       href={`/go/${id}`}
       onClick={clic}
-      rel="sponsored nofollow"
+      rel="sponsored nofollow noopener"
       target="_blank"
       className="inline-flex items-center gap-2 rounded-carafe bg-lie px-4 py-2 font-corps text-sm text-craie hover:bg-lie-clair"
     >
       Voir l&apos;offre — {prix.toFixed(2).replace(".", ",")} €
+      <span className="text-xs uppercase tracking-wide opacity-80">
+        Lien affilié
+      </span>
     </a>
   );
 }

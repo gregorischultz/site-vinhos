@@ -4,6 +4,16 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const COOKIE = "carafe_consentement";
+const EVENEMENT_OUVRIR = "carafe:ouvrir-preferences-cookies";
+
+/**
+ * Rouvre le bandeau de consentement pour permettre de changer de choix.
+ * Utilisé par le lien « Gérer mes cookies » du pied de page (RGPD : retirer
+ * son consentement doit être aussi simple que de le donner).
+ */
+export function ouvrirPreferencesCookies() {
+  window.dispatchEvent(new Event(EVENEMENT_OUVRIR));
+}
 
 /**
  * BanniereCookies — bandeau de consentement minimal.
@@ -20,6 +30,11 @@ export function BanniereCookies() {
       .split("; ")
       .some((c) => c.startsWith(`${COOKIE}=`));
     if (!repondu) setVisible(true);
+
+    // Rouvrir le bandeau depuis « Gérer mes cookies »
+    const ouvrir = () => setVisible(true);
+    window.addEventListener(EVENEMENT_OUVRIR, ouvrir);
+    return () => window.removeEventListener(EVENEMENT_OUVRIR, ouvrir);
   }, []);
 
   if (!visible) return null;
@@ -44,6 +59,9 @@ export function BanniereCookies() {
           .
         </p>
         <div className="flex shrink-0 gap-2">
+          {/* Les deux boutons ont un poids visuel identique (CNIL : refus aussi
+              simple et aussi visible que l'acceptation). Ne pas mettre l'un en
+              plein et l'autre en contour. */}
           <button
             type="button"
             onClick={() => repondre("refuse")}
@@ -54,7 +72,7 @@ export function BanniereCookies() {
           <button
             type="button"
             onClick={() => repondre("accepte")}
-            className="rounded-carafe bg-lie px-4 py-2 font-corps text-sm text-craie hover:bg-lie-clair"
+            className="rounded-carafe border border-trait px-4 py-2 font-corps text-sm text-encre hover:border-lie"
           >
             Accepter
           </button>

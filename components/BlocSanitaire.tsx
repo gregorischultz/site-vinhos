@@ -5,7 +5,7 @@
  */
 export function BlocSanitaire() {
   return (
-    <p className="font-donnees text-xs uppercase tracking-wide text-encre-doux">
+    <p className="font-donnees text-sm font-bold uppercase tracking-wide text-encre">
       L&apos;abus d&apos;alcool est dangereux pour la santé, à consommer avec
       modération.
     </p>
