@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+/*
+  TOKENS DE DESIGN — Carafe (secção 3 do PROMPT-CARAFE-v2_1.md)
+  Sistema fechado. Não acrescentar cores nem fontes.
+  Em Tailwind v4, cada variável dentro de @theme gera utilitários:
+  --color-lie  ->  bg-lie / text-lie / border-lie
+  --font-titres -> font-titres
+  --text-xl    -> text-xl
+*/
+@theme {
+  /* Cores */
+  --color-craie: #faf7f2; /* fundo da página */
+  --color-papier: #ffffff; /* fundo de cartões e blocos */
+  --color-encre: #1c1917; /* texto principal */
+  --color-encre-doux: #6b625b; /* texto secundário, legendas */
+  --color-trait: #e5ded3; /* bordas, separadores */
+  --color-lie: #6e1e28; /* primária */
+  --color-lie-clair: #8f3341; /* hover da primária */
+  --color-sauge: #4a5d4e; /* secundária */
+  --color-sable: #f0e9de; /* fundo alternado de secção */
+
+  /* Tipografia — famílias ligadas às fontes self-hosted (next/font em layout.tsx) */
+  --font-titres: var(--font-fraunces), Georgia, serif;
+  --font-corps: var(--font-public-sans), system-ui, sans-serif;
+  --font-donnees: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  /* Escala tipográfica (rem): 0.75 0.875 1 1.125 1.375 1.75 2.25 3 */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+
+  /* Raio de canto: 2px. Apenas. */
+  --radius-carafe: 2px;
+
+  /* Largura máxima do contentor */
+  --container-carafe: 1120px;
+}
+
+/* Estilos base */
+@layer base {
+  html {
+    background-color: var(--color-craie);
+  }
+
+  body {
+    background-color: var(--color-craie);
+    color: var(--color-encre);
+    font-family: var(--font-corps);
+    font-size: 1.125rem; /* corpo de texto */
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-titres);
+    color: var(--color-encre);
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+}
+
+/* Utilitário: contentor central 1120px com padding lateral em mobile */
+@utility contenu {
+  max-width: var(--container-carafe);
+  margin-inline: auto;
+  padding-inline: 20px;
+}

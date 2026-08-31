@@ -1,0 +1,12 @@
+/**
+ * DonneesStructurees — injecte un bloc JSON-LD (données structurées SEO).
+ * Ne pas utiliser Product / Review / AggregateRating (voir secção 11).
+ */
+export function DonneesStructurees({ data }: { data: object }) {
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}

@@ -1,0 +1,22 @@
+{
+  "france": {
+    "libelle_fr": "France",
+    "note_contexte": "Premier vignoble du monde en valeur, référence des appellations."
+  },
+  "italie": {
+    "libelle_fr": "Italie",
+    "note_contexte": "Diversité de cépages autochtones exceptionnelle."
+  },
+  "espagne": {
+    "libelle_fr": "Espagne",
+    "note_contexte": "Plus grande surface de vignoble au monde."
+  },
+  "portugal": {
+    "libelle_fr": "Portugal",
+    "note_contexte": "Cépages indigènes, du vinho verde au porto."
+  },
+  "argentine": {
+    "libelle_fr": "Argentine",
+    "note_contexte": "Malbec d'altitude, autour de Mendoza."
+  }
+}

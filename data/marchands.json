@@ -1,0 +1,10 @@
+{
+  "cave-exemple": {
+    "nom": "Cave Exemple",
+    "pays": "france",
+    "programme": "direct",
+    "format_lien": "url",
+    "texte_divulgation": "Lien commercial — un achat peut nous rémunérer, sans surcoût pour vous.",
+    "actif": true
+  }
+}

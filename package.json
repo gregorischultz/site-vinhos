@@ -4,19 +4,33 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "valider": "tsx scripts/valider-contenu.ts",
+    "verifier-liens": "tsx scripts/verifier-liens.ts",
+    "test": "vitest run",
+    "prebuild": "npm run valider",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.122.0",
+    "@tailwindcss/postcss": "^4.3.3",
+    "fuse.js": "^7.5.0",
+    "gray-matter": "^4.0.3",
     "next": "^15.1.0",
+    "next-mdx-remote": "^6.0.0",
+    "postcss": "^8.5.26",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.3.3",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "typescript": "^5"
+    "tsx": "^4.23.12",
+    "typescript": "^5",
+    "vitest": "^4.1.11"
   }
 }

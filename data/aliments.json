@@ -1,0 +1,110 @@
+{
+  "fromage-pate-pressee": {
+    "libelle_fr": "Fromage à pâte pressée",
+    "synonymes": ["comté", "beaufort", "gruyère", "cantal", "tomme", "raclette"],
+    "criteres": {
+      "acidite_min": 3,
+      "tanins_max": 3,
+      "corps": [2, 3, 4],
+      "types_recommandes": ["blanc-sec", "effervescent"],
+      "types_exclus": ["rouge-moelleux", "vin-doux-naturel"]
+    },
+    "explication_fr": "L'acidité nettoie le gras du fromage ; des tanins marqués rendraient l'ensemble amer.",
+    "page": "/accords/fromage-pate-pressee"
+  },
+  "fromage-de-chevre": {
+    "libelle_fr": "Fromage de chèvre",
+    "synonymes": ["crottin", "sainte-maure", "chabichou"],
+    "criteres": {
+      "acidite_min": 4,
+      "types_recommandes": ["blanc-sec"]
+    },
+    "explication_fr": "Un blanc sec très acide, type Sauvignon, répond à l'acidité lactique du chèvre.",
+    "page": "/accords/fromage-de-chevre"
+  },
+  "charcuterie": {
+    "libelle_fr": "Charcuterie",
+    "synonymes": ["saucisson", "jambon", "pâté", "rillettes"],
+    "criteres": {
+      "acidite_min": 3,
+      "tanins_max": 3,
+      "corps": [2, 3, 4],
+      "types_recommandes": ["rouge-sec", "rose"]
+    },
+    "explication_fr": "Un rouge léger et frais, aux tanins souples, coupe le gras sans dominer le sel.",
+    "page": "/accords/charcuterie"
+  },
+  "grillades-boeuf": {
+    "libelle_fr": "Grillades de bœuf",
+    "synonymes": ["entrecôte", "côte de bœuf", "asado", "barbecue"],
+    "criteres": {
+      "tanins_min": 3,
+      "corps": [3, 4, 5],
+      "types_recommandes": ["rouge-sec"]
+    },
+    "explication_fr": "Les tanins d'un rouge structuré se lient aux protéines de la viande grillée.",
+    "page": "/accords/grillades-boeuf"
+  },
+  "poisson-grille": {
+    "libelle_fr": "Poisson grillé",
+    "synonymes": ["dorade", "bar", "sardines"],
+    "criteres": {
+      "acidite_min": 3,
+      "corps": [1, 2, 3],
+      "types_recommandes": ["blanc-sec", "effervescent", "champagne"]
+    },
+    "explication_fr": "Un blanc sec et vif, sans lourdeur, souligne la chair du poisson sans l'écraser.",
+    "page": "/accords/poisson-grille"
+  },
+  "apero-leger": {
+    "libelle_fr": "Apéritif léger",
+    "synonymes": ["tapas", "olives", "gougères"],
+    "criteres": {
+      "acidite_min": 3,
+      "corps": [1, 2],
+      "types_recommandes": ["effervescent", "champagne", "blanc-sec"]
+    },
+    "explication_fr": "Bulles ou blanc léger et frais : de la tension pour ouvrir l'appétit.",
+    "page": "/accords/apero-leger"
+  },
+  "volaille-rotie": {
+    "libelle_fr": "Volaille rôtie",
+    "synonymes": ["poulet rôti", "pintade", "chapon"],
+    "criteres": {
+      "corps": [2, 3, 4],
+      "types_recommandes": ["rouge-sec", "blanc-sec"]
+    },
+    "explication_fr": "Un vin de corps moyen, rouge souple ou blanc ample, épouse la chair rôtie.",
+    "page": "/accords/volaille-rotie"
+  },
+  "plat-epice": {
+    "libelle_fr": "Plat épicé",
+    "synonymes": ["curry", "tajine", "cuisine asiatique"],
+    "criteres": {
+      "acidite_min": 3,
+      "types_recommandes": ["rose", "blanc-sec", "blanc-moelleux"]
+    },
+    "explication_fr": "Un peu de fraîcheur, parfois de sucre, apaise le piquant sans l'exacerber.",
+    "page": "/accords/plat-epice"
+  },
+  "dessert-fruite": {
+    "libelle_fr": "Dessert aux fruits",
+    "synonymes": ["tarte aux fruits", "salade de fruits"],
+    "criteres": {
+      "sucrosite_min": 3,
+      "types_recommandes": ["blanc-moelleux", "vin-doux-naturel"]
+    },
+    "explication_fr": "Le vin doit être au moins aussi sucré que le dessert, sinon il paraît acide.",
+    "page": "/accords/dessert-fruite"
+  },
+  "chocolat": {
+    "libelle_fr": "Chocolat",
+    "synonymes": ["fondant", "mousse au chocolat", "praliné"],
+    "criteres": {
+      "sucrosite_min": 3,
+      "types_recommandes": ["vin-doux-naturel", "vin-fortifie"]
+    },
+    "explication_fr": "Un vin doux naturel, riche et puissant, tient tête à l'amertume du cacao.",
+    "page": "/accords/chocolat"
+  }
+}
