@@ -5,6 +5,7 @@
 */
 import { chargerTousLesVins } from "../lib/contenu";
 import { ALIMENTS } from "../lib/accords";
+import { checkCompliance } from "../lib/compliance/blocklist";
 
 try {
   const vins = chargerTousLesVins();
@@ -19,6 +20,24 @@ try {
         );
       }
     }
+  }
+
+  // Filtre loi Évin : le texte éditorial (résumé, corps MDX, arômes) ne doit
+  // contenir aucun terme hédonique, festif, sanitaire ou saisonnier interdit.
+  const nonConformes = vins
+    .map((vin) => {
+      const texte = [vin.resume, vin.corps, ...vin.aromes].join("\n");
+      return { slug: vin.slug, ...checkCompliance(texte) };
+    })
+    .filter((r) => !r.ok);
+
+  if (nonConformes.length > 0) {
+    const details = nonConformes
+      .map((r) => `    · content/vins/${r.slug}.mdx : ${r.hits.join(", ")}`)
+      .join("\n");
+    throw new Error(
+      `\n❌ Contenu non conforme (loi Évin, regrasLegais.md §5) :\n${details}\n`,
+    );
   }
 
   const publies = vins.filter((v) => v.statut === "publie").length;
